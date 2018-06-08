@@ -14,8 +14,8 @@ function addproduct($value)
 	'" . $value['description'] . "'
 	);";
 
-	if (!mysql_query($conn, $sql)) {
-		echo("Error: " . $sql . "<br>" . mysql_error($conn));
+	if (!mysqli_query($conn, $sql)) {
+		echo("Error: " . $sql . "<br>" . mysqli_error($conn));
 	}
 }
 
@@ -28,15 +28,19 @@ function productlist()
 	$result = mysqli_query($conn, $sql);
 
 	$no = 1;
-	while (mysqli_num_rows($result) > 0) {
-		$row = mysqli_fetch_assoc($result);
-		?>
-		<th><?php echo $no++; ?></th>
-		<th><?php echo $row["category"]; ?></th>
-		<th><?php echo $row["pname"]; ?></th>
-		<th><?php echo $row["stock"]; ?></th>
-		<th><?php echo $row["price"]; ?></th>
-		<th><?php echo $row["pdescription"]; ?></th>
-		<?php
+	if (mysqli_num_rows($result) > 0) {
+		while ($row = mysqli_fetch_assoc($result)) {
+			?>
+			<tr>
+				<th><?php echo $no++; ?></th>
+				<th><?php echo $row["category"]; ?></th>
+				<th><?php echo $row["pname"]; ?></th>
+				<th><?php echo $row["pstock"]; ?></th>
+				<th><?php echo $row["price"]; ?></th>
+				<th><?php echo $row["pdescription"]; ?></th>
+			</tr>
+			<?php
+		}
 	}
+	
 }

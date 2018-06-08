@@ -3,6 +3,7 @@ include 'repository/product.php';
 include 'shared/admin-header.php';
 ?>
 <body>
+	<?php include 'shared/admin-nav.php'; ?>
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">
@@ -38,7 +39,7 @@ include 'shared/admin-header.php';
 										?>
 										<div class="alert alert-success">
 											<button type="button" class="close" data-dismiss="alert">×</button>
-											<strong>Well done!</strong> Now you are listening me :) 
+											<strong>Successfully!</strong> Product has been added. 
 										</div>
 										<?php
 									}

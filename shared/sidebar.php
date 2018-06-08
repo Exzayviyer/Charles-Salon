@@ -11,7 +11,7 @@
                             <ul class="widget widget-menu unstyled">
                                 <li><a href="product"><i class="menu-icon icon-inbox"></i>Product <!--<b class="label green pull-right">
                                     11</b>--> </a></li>
-                                <li><a href="users"><i class="menu-icon icon-inbox"></i>Users <!--<b class="label green pull-right">
-                                    11</b>--> </a></li>
+                                <!--<li><a href="users"><i class="menu-icon icon-inbox"></i>Users <b class="label green pull-right">
+                                    11</b> </a></li>-->
                             </ul>
                         </div>
