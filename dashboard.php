@@ -1,6 +1,7 @@
 ﻿<?php
 include 'repository/admin.php';
 include 'shared/admin-header.php';
+header("Location: product.php")
 ?>
 
     <body>

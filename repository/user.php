@@ -5,13 +5,14 @@ function register($value)
 {
 	$conn = connection();
 
-	$sql = "INSERT INTO userinfo (email, password, fname, lname, gender)
+	$sql = "INSERT INTO userinfo (email, password, fname, lname, gender, role)
 	VALUES (
 	'" . $value['email'] . "',
 	'" . $value['password'] . "',
 	'" . $value['fname'] . "',
 	'" . $value['lname'] . "',
-	'" . $value['gender'] . "'
+	'" . $value['gender'] . "',
+	'customer'
 	);";
 
 	if (!mysql_query($conn, $sql)) {
