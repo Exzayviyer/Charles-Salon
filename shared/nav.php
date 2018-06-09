@@ -19,9 +19,6 @@ if (isset($_GET["logout"])) {
               <a class="nav-link js-scroll-trigger" href="index">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="store">Store</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="about">About</a>
             </li>            
             <li class="nav-item">
@@ -31,6 +28,7 @@ if (isset($_GET["logout"])) {
             <?php
             if (!isset($_SESSION["user_id"])) {
               ?>
+            
               <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="login">Login</a>
               </li>
@@ -40,9 +38,9 @@ if (isset($_GET["logout"])) {
               <?php
             } else {
             ?>
-              <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="store">Cart (0)</a>
-              </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="store">Store</a>
+            </li>
               <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="?logout=true">Logout</a>
               </li>

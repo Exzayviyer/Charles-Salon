@@ -34,13 +34,7 @@ if (! empty($_GET["action"])) {
     }
 }
 ?>
-<HEAD>
-
-<link href="style.css" type="text/css" rel="stylesheet" />
-</HEAD>
-<?php include 'shared/header.php'; ?>
-<BODY style="background-color: gray;">
-    <?php include 'shared/nav.php'; ?><br><br><br>
+<?php include 'shared/nav.php'; ?><br><br><br>
 <?php
 $cartItem = $shoppingCart->getMemberCartItem($member_id);
 $item_quantity = 0;
@@ -54,8 +48,33 @@ if (! empty($cartItem)) {
     }
 }
 ?>
-<div id="shopping-cart">
-        <div class="txt-heading">
+<?php include 'shared/header.php'; ?>
+
+  <body id="page-top" style="background-color: gray;">
+
+    <!-- Navigation -->
+    <?php include 'shared/nav.php'; ?>
+
+      <br>
+      <br>
+      <br>
+      <br>
+
+     <!-- Page Content -->
+    <div class="container">
+        
+      <div class="row">
+
+        <div class="col-lg-3">
+
+          <h1 class="my-4">Products</h1>
+          <!--<div class="list-group">
+            <a href="#" class="list-group-item">All</a>
+            <a href="#" class="list-group-item">Hair</a>
+            <a href="#" class="list-group-item">Skin</a>
+            <a href="#" class="list-group-item">Face</a>
+          </div>-->
+          <div class="txt-heading">
             <div class="txt-heading-label">Shopping Cart</div>
 
             <a id="btnEmpty" href="index.php?action=empty"><img
@@ -63,23 +82,52 @@ if (! empty($cartItem)) {
                 title="Empty Cart" class="float-right" /></a>
             <div class="cart-status">
                 <div>Total Quantity: <?php echo $item_quantity; ?></div>
-                <div>Total Price: P <?php echo $item_price; ?></div>
+                <div>Total Price: $ <?php echo $item_price; ?></div>
             </div>
         </div>
-        <?php
-        if (! empty($cartItem)) {
-            ?>
-<?php
-            require_once ("cart-list.php");
-            ?>  
-            <div class="align-right">
-            <a href="process-checkout.php"><button class="btn-action" name="check_out">Go To Checkout</button></a>
-            </div>
-<?php
-        } // End if !empty $cartItem
-        ?>
+<br>
+        </div>
+        <!-- /.col-lg-3 -->
 
-</div>
-<?php
-require_once "product-list.php";
-?>
+        <div class="col-lg-9">
+
+          
+
+          <div class="row">
+
+            
+
+            
+
+            
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">Item Six</a>
+                  </h4>
+                  <h5>$24.99</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- /.row -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <?php include 'shared/footer.php'; ?>

@@ -5,13 +5,12 @@ function addproduct($value)
 {
 	$conn = connection();
 
-	$sql = "INSERT INTO product (category, pname, pstock, price, pdescription)
+	$sql = "INSERT INTO tbl_product (name, code, image, price)
 	VALUES (
-	'" . $value['category'] . "',
-	'" . $value['product'] . "',
-	'" . $value['stock'] . "',
-	'" . $value['price'] . "',
-	'" . $value['description'] . "'
+	'" . $value['name'] . "',
+	'" . $value['code'] . "',
+	'product/" . $value['image'] . "',
+	'" . $value['price'] . "'
 	);";
 
 	if (!mysqli_query($conn, $sql)) {
@@ -23,7 +22,7 @@ function productlist()
 {
 	$conn = connection();
 
-	$sql = "SELECT * FROM product;";
+	$sql = "SELECT * FROM tbl_product;";
 
 	$result = mysqli_query($conn, $sql);
 
@@ -33,11 +32,9 @@ function productlist()
 			?>
 			<tr>
 				<th><?php echo $no++; ?></th>
-				<th><?php echo $row["category"]; ?></th>
-				<th><?php echo $row["pname"]; ?></th>
-				<th><?php echo $row["pstock"]; ?></th>
+				<th><?php echo $row["name"]; ?></th>
+				<th><?php echo $row["code"]; ?></th>
 				<th><?php echo $row["price"]; ?></th>
-				<th><?php echo $row["pdescription"]; ?></th>
 			</tr>
 			<?php
 		}
