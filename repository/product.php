@@ -9,7 +9,7 @@ function addproduct($value)
 	VALUES (
 	'" . $value['name'] . "',
 	'" . $value['code'] . "',
-	'product/" . $value['image'] . "',
+	'" . $value['image'] . "',
 	'" . $value['price'] . "'
 	);";
 
