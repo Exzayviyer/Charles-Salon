@@ -8,7 +8,7 @@ if (isset($_GET["logout"])) {
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index">Charles Salon</a>
+        <a class="navbar-brand js-scroll-trigger" href="index.php">Charles Salon</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -16,33 +16,31 @@ if (isset($_GET["logout"])) {
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="index">Home</a>
+              <a class="nav-link js-scroll-trigger" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="store">Store</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="about">About</a>
+              <a class="nav-link js-scroll-trigger" href="about.php">About</a>
             </li>            
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="contact.php">Contact</a>
             </li>
 
             <?php
             if (!isset($_SESSION["user_id"])) {
               ?>
+            
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="login">Login</a>
+                <a class="nav-link js-scroll-trigger" href="login.php">Login</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="register">Register</a>
+                <a class="nav-link js-scroll-trigger" href="register.php">Register</a>
               </li>
               <?php
             } else {
             ?>
-              <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="store">Cart (0)</a>
-              </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="store.php">Store</a>
+            </li>
               <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="?logout=true">Logout</a>
               </li>

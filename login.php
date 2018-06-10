@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (0 < $id) {
 		if (getrole($id) == "customer") {
 		
-			header("Location: index.php");
+			header("Location: store.php");
 		}
 		if (getrole($id) == "admin") {
 
