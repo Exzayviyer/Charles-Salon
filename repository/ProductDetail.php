@@ -22,36 +22,30 @@ include 'shared/admin-header.php';
 							</div>
 							<div class="module-body">
 
-
-									
-									
-
-									<br />
-
-									<form class="form-horizontal row-fluid" method="post" action="AddProduct.php"  enctype="multipart/form-data">
+								<form class="form-horizontal row-fluid" action = "AddProduct.php"  enctype="multipart/form-data">
 										
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Product</label>
 											<div class="controls">
-												<input type="text" id="name" placeholder="Type product name here..." name="name" required>
+												<input type="text" id="basicinput" placeholder="Type product name here..." name="name" required>
 											</div>
 										</div>
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Code</label>
 											<div class="controls">
-												<input type="text" id="code" placeholder="Type code here..." name="code" required>
+												<input type="text" id="basicinput" placeholder="Type code here..." name="code" required>
 											</div>
 										</div>
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Image</label>
 											<div class="controls">
-												<input type="file" name="image" required>
+												<input type="file" id="basicinput" placeholder="Type code here..." name="file" required>
 											</div>
 										</div>
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Price</label>
 											<div class="controls">
-												<input type="number" id="price" placeholder="Type price name here..." name="price" required>
+												<input type="number" id="basicinput" placeholder="Type price name here..." name="price" required>
 											</div>
 										</div>
 										
@@ -61,45 +55,11 @@ include 'shared/admin-header.php';
 											</div>
 										</div>
 									</form>
-							</div>
-						</div>
 
-						<div class="module">
-							<div class="module-head">
-								<h3>Product</h3>
-							</div>
-							<div class="module-body table">
-								<table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display" width="100%">
-									<thead>
-										<tr>
-											<th>No.</th>
-											<th>Product</th>
-											<th>Code</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-
-										<?php productlist(); ?>
-
-									</tbody>
-									<tfoot>
-										<tr>
-											<th>No.</th>
-											<th>Product</th>
-											<th>Code</th>
-											<th>Price</th>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
-						</div><!--/.module-->
-
-						<br />
-					</div><!--/.content-->
-				</div><!--/.span9-->
-			</div>
-		</div><!--/.container-->
-	</div><!--/.wrapper-->
+							</div><!--/.content-->
+						</div><!--/.span9-->
+					</div>
+				</div><!--/.container-->
+		</div><!--/.wrapper-->
 
 <?php include 'shared/admin-footer.php'; ?>

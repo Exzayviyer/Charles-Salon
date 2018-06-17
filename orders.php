@@ -1,5 +1,5 @@
 <?php
-include 'repository/contact.php';
+include 'repository/product.php';
 include 'shared/admin-header.php';
 ?>
     <body>
@@ -16,36 +16,54 @@ include 'shared/admin-header.php';
                 	<div class="span9">
 					<div class="content">
 						
+                        <?php
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                            # code...
+                            if (isset($_POST['del_id'])) {
+                                # code...
+                                productdelivered($_POST['del_id']);
+                            }
+                            if (isset($_POST['rej_id'])) {
+                                # code...
+                                productrejected($_POST['rej_id']);
+                            }
+                        }
+                        ?>
+
 						<div class="module">
 							<div class="module-head">
-								<h3>Message</h3>
+								<h3>Pending Orders</h3>
 							</div>
                                 <div class="module-body table">
                                     <table class="table table-message">
                                         <tbody>
                                             <tr class="heading">
-                                                <!--<td>
-                                                    Action
-                                                </td>
-                                            -->
                                                 <td class="cell-author hidden-phone hidden-tablet">
-                                                    Sender
+                                                    Customer Name:
                                                 </td>
                                                 <td class="cell-title">
-                                                    Subject
+                                                    Address
                                                 </td>
                                                 <td class="cell-title">
-                                                    Detail
+                                                    Product
                                                 </td>
                                                 <td class="cell-time align-right">
-                                                    Date
+                                                    Quantity
+                                                </td>
+                                                <td class="cell-time align-right">
+                                                    Order Date
+                                                </td>
+                                                <td>
+                                                    Action / Status
                                                 </td>
                                             </tr>
 
+                                            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
-                                            <?php msglist(); ?>
+                                            <?php pendingorder(); ?>
                                             
-                                            
+                                            </form>
+
                                         </tbo.dy>
                                     </table>
                                 </div>

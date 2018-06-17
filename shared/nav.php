@@ -41,6 +41,12 @@ if (isset($_GET["logout"])) {
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="store.php">Store</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="myorder.php">My Orders</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="history.php"><?php echo $_SESSION["lname"]; ?>'s Purchase History</a>
+            </li>
               <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="?logout=true">Logout</a>
               </li>
